@@ -1,0 +1,149 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 68%;
+    background-color: rgb(240, 152, 25, .6);
+}
+
+.container {
+    padding: 1rem;
+    width: 60%;
+    height: 93vh;
+    margin: 2rem auto;
+    background-color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.result {
+    display: flex;
+    box-shadow: 0px 2px 4px rgba(0,0,0,.2)
+}
+
+/****************************
+FORM 
+****************************/
+form {
+    width: 40%;
+    height: 80vh;
+    background-color: rgba(0,0,0,.02);
+    position: relative;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 15rem;
+}
+
+input {
+    font-size: 1rem;
+    padding: .3rem;
+    height: 2.5rem;
+    width: 20rem;
+    border: none;
+    border-left: 3px solid orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-25%, -25%);
+    box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+input:focus {
+    border: none;
+    background-color: white;
+    border-bottom: 3px solid orange;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+button {
+    position: absolute;
+    padding: .2rem .4rem;
+    color: lightgray;
+    border: none;
+    background-color: white;
+    font-size: 1.5rem;
+    top: 50%;
+    left: 107%;
+    transform: translateY(-25%);
+}
+
+
+/****************************
+RESULT
+****************************/
+#getWeather {
+    width: 60%;
+    background-color: rgb(251, 148, 85, .4);
+}
+
+.getWeather__result {
+    width: 60%;
+    height: 26rem;
+    background-color: white;
+    margin: 5rem auto;
+    padding: 1rem;
+    border-radius: 3px;
+    box-shadow:  0 2px 4px rgba(0,0,0,.2);
+    background-image: linear-gradient(to right bottom, #005aa7 10%, #fffde4 110%);
+    transition: all linear .2s;
+}
+
+.getWeather__result:hover {
+    transform: translateY(-2px);
+    box-shadow:  0 0px 15px rgba(0,0,0,.2);
+}
+
+.getWeather__result--top {
+    text-align: left;
+}
+
+.result--country {
+    font-size: 1.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    
+}
+
+.result--des {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.result--temp {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 6rem 0 8.5rem;
+}
+
+.getWeather__result--bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.getWeather__result--bottom p {
+    font-size: .8rem;
+    text-transform: uppercase;
+}
+
+footer {
+    color: gray;
+    padding: .5rem;
+    margin-right: 0;
+}
