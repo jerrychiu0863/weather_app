@@ -9,6 +9,12 @@ const elemetes = {
 }
 
 ////////////////////////////////////////////////////////////
+// Covert C to F
+function Fahrenheit(temp) {
+    return Math.round(temp * ( 9 / 5 ) + 32)
+}
+
+////////////////////////////////////////////////////////////
 // Get Weather Data
     
 async function getWeather() {
@@ -36,7 +42,7 @@ async function getWeather() {
            <div class="getWeather__result--top">
                <p class="result--country">${city}</p>
                 <p class="result--des">${description}</p>
-               <p class="result--temp">${temp}&#176c</p>
+               <p class="result--temp">${temp}&#176C / ${Fahrenheit(temp)}&#176F</p>
            </div>
            <div class="getWeather__result--bottom">
                <p class="result--bot">Max-Temp: ${temp_max}</p>
