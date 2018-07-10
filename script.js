@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////
 // DOM elements
-const elemetes = {
+const elements = {
         API_KEY: 'a23bb8de6d412c9e8dddf84a52193a99',
         country: document.getElementById('country'),
         resultPage: document.getElementById('getWeather'),
@@ -15,27 +15,43 @@ function Fahrenheit(temp) {
 }
 
 ////////////////////////////////////////////////////////////
+// Render Function
+function renderLoader() {
+    const markup = 
+        `
+          <div class="getWeather__render">
+             <i class="fas fa-undo getWeather__render--icon"></i>
+          </div>
+        `;
+    
+    elements.resultPage.innerHTML = markup;
+}
+
+////////////////////////////////////////////////////////////
 // Get Weather Data
     
 async function getWeather() {
+    
+    // Clear value
+    elements.resultPage.innerHTML = '';
+    // Loader
+    renderLoader();
+    
     try{
 
-        const result = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${elemetes.country.value}&mode=json&appid=${elemetes.API_KEY}&units=metric`);
+        const result = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${elements.country.value}&mode=json&appid=${elements.API_KEY}&units=metric`);
         const data = await result.json();
         let humidity, temp, temp_max, temp_min, description, city;
-        humidity = data.main.humidity;
+        humidity = Math.round(data.main.humidity);
         temp = Math.round(data.main.temp);
-        temp_max = data.main.temp_max;
-        temp_min = data.main.temp_min;
+        temp_max = Math.round(data.main.temp_max);
+        temp_min = Math.round(data.main.temp_min);
         description = data.weather[0].description;
         city = data.name;
-
-        // Clear value
-        elemetes.country.value = '';
-        elemetes.resultPage.innerHTML = '';
-
-        // Prepare render UI
-
+        
+        // Clear input value
+        elements.country.value = '';
+    
         // Render UI
         var msg;
         msg = `<div class="getWeather__result">
@@ -50,7 +66,7 @@ async function getWeather() {
                <p class="result--hum">Humidity: ${humidity}</p>
            </div>
         </div>`;
-        elemetes.resultPage.innerHTML = msg;
+        elements.resultPage.innerHTML = msg;
     }catch(error){
         alert('Please enter correct city!');
 
@@ -58,15 +74,16 @@ async function getWeather() {
 }
 
 ////////////////////////////////////////////////////////////
-// DOM elements
-    elemetes.form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        getWeather();
-     
-    });
+// Search Control
+elements.form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    getWeather();
 
-    elemetes.btn_submit.addEventListener('click', function(e) {
-        e.preventDefault();
-        getWeather();
-     
-    });
+});
+
+elements.btn_submit.addEventListener('click', function(e) {
+    e.preventDefault();
+    getWeather();
+
+});
+

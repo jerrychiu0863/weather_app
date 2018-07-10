@@ -94,6 +94,17 @@ RESULT
     background-color: rgb(251, 148, 85, .4);
 }
 
+.getWeather__render {
+    display: inline-block;
+    margin-top: 50%;
+    animation: rotate 2.5s linear infinite;
+}
+
+.getWeather__render--icon {
+    font-size: 3rem;
+    color: rgba(242, 122, 48, .8);
+}
+
 .getWeather__result {
     width: 60%;
     height: 26rem;
@@ -149,3 +160,16 @@ footer {
     padding: .5rem;
     margin-right: 0;
 }
+
+/****************************
+Render animation
+****************************/
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    
+    100% {
+        transform: rotate(-360deg);
+    }
+};
