@@ -39,7 +39,7 @@ async function getWeather() {
     
     try{
 
-        const result = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${elements.country.value}&mode=json&appid=${elements.API_KEY}&units=metric`);
+        const result = await fetch(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${elements.country.value}&mode=json&appid=${elements.API_KEY}&units=metric`);
         const data = await result.json();
         let humidity, temp, temp_max, temp_min, description, city;
         humidity = Math.round(data.main.humidity);
