@@ -61,9 +61,9 @@ async function getWeather() {
                <p class="result--temp">${temp}&#176C / ${Fahrenheit(temp)}&#176F</p>
            </div>
            <div class="getWeather__result--bottom">
-               <p class="result--bot">Max-Temp: ${temp_max}</p>
-               <p class="result--bot">Min-Temp: ${temp_min}</p>
-               <p class="result--hum">Humidity: ${humidity}</p>
+               <p class="result--bot">Max-Temp: ${temp_max}&#176C</p>
+               <p class="result--bot">Min-Temp: ${temp_min}&#176C</p>
+               <p class="result--hum">Humidity: ${humidity}%</p>
            </div>
         </div>`;
         elements.resultPage.innerHTML = msg;
