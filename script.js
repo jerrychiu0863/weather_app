@@ -74,7 +74,7 @@ async function getWeather() {
 
     }
 }
-
+ 
 ////////////////////////////////////////////////////////////
 // Search Control
 elements.form.addEventListener('submit', function(e) {
