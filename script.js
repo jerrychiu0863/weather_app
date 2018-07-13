@@ -56,15 +56,17 @@ async function getWeather() {
         var msg;
         msg = `<div class="getWeather__result">
            <div class="getWeather__result--top">
-               <p class="result--country">${city}</p>
+               <p class="result--country"><i class="fas fa-map-marker-alt result--country--icon"></i>${city}</p>
                 <p class="result--des">${description}</p>
                <p class="result--temp">${temp}&#176C / ${Fahrenheit(temp)}&#176F</p>
            </div>
            <div class="getWeather__result--bottom">
-               <p class="result--bot">Max-Temp: ${temp_max}&#176C</p>
-               <p class="result--bot">Min-Temp: ${temp_min}&#176C</p>
-               <p class="result--hum">Humidity: ${humidity}%</p>
-           </div>
+                   <p class="result--bot">Max-Temp:  ${temp_max}&#176c</p>
+                   <p class="result--bot">Min-Temp: ${temp_min}&#176c</p>
+            </div>
+            <div class="getWeather__result--bottom">
+                <p class="result--hum">Humidity: ${humidity}%</p>
+            </div>
         </div>`;
         elements.resultPage.innerHTML = msg;
     }catch(error){

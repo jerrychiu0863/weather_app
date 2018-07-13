@@ -81,7 +81,7 @@ button {
     background-color: white;
     font-size: 1.5rem;
     top: 50%;
-    left: 107%;
+    left: 113%;
     transform: translateY(-25%);
 }
 
@@ -90,7 +90,7 @@ button {
 RESULT
 ****************************/
 #getWeather {
-    width: 60%;
+    width: 70%;
     background-color: rgb(251, 148, 85, .4);
 }
 
@@ -107,13 +107,13 @@ RESULT
 
 .getWeather__result {
     width: 60%;
-    height: 26rem;
-    background-color: white;
-    margin: 5rem auto;
+    height: 28rem;
+    margin: 5rem 0 5rem 8.5rem;
     padding: 1rem;
+    border: 5px solid #fff;
     border-radius: 3px;
     box-shadow:  0 2px 4px rgba(0,0,0,.2);
-    background-image: linear-gradient(to right bottom, #005aa7 10%, #fffde4 110%);
+    background-image: linear-gradient(to right bottom, rgba(95,138,189), rgba(116,139,192));
     transition: all linear .2s;
 }
 
@@ -126,33 +126,49 @@ RESULT
     text-align: left;
 }
 
+.getWeather__result--top p {
+    color: rgba(238,238,238);
+}
+
 .result--country {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 800;
     text-transform: uppercase;
-    
+}
+
+.result--country--icon {
+    margin-right: .5rem;
+    font-size: 1.5rem;
+    transform: translateY(-2px);
+    color: rgba(238,238,238, .9);
 }
 
 .result--des {
     font-size: 1rem;
     margin-bottom: 1rem;
+    text-transform: capitalize;
+    color: rgba(238,238,238,.1);
 }
 
 .result--temp {
     font-size: 3rem;
     font-weight: 700;
-    margin: 6rem 0 8.5rem;
+    margin: 7.5rem 0 9rem 0;
 }
 
 .getWeather__result--bottom {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin-top: .5rem;
 }
 
 .getWeather__result--bottom p {
     font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    color: rgba(238,238,238,.8);
 }
 
 footer {
