@@ -52,7 +52,7 @@ async function getWeather() {
     
     try{
 
-        const result = await fetch(`${proxy}http://api.openweathermap.org/data/2.5/weather?q=${elements.country.value}&mode=json&appid=${key}&units=metric`);
+        const result = await fetch(`${proxy}http://api.openweathermap.org/data/2.5/weather?q=${elements.formInput.value}&mode=json&appid=${key}&units=metric`);
         const data = await result.json();
         /*
         let humidity, temp, temp_max, temp_min, description, city;
@@ -64,7 +64,7 @@ async function getWeather() {
         city = data.name;
         */
         // Clear input value
-        elements.country.value = '';
+        elements.formInput.value = '';
     
         // Render UI
         renderRes(data);
